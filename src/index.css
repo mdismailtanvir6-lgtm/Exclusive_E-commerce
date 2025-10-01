@@ -3,29 +3,7 @@
 @import "tailwindcss";
 
 
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-img {
-  vertical-align: middle;
-}
-
-a {
-  display: inline-block;
-  text-decoration: none;
-}
-
-ul,
-ol,
-li {
-  list-style: none;
-}
-
-
+/* ======== common color and font ========== */
 @theme {
   /* ====== color ========== */
   --color-white_color: #ffffff;
@@ -44,15 +22,38 @@ li {
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
 
-  ----breakpoint : auto;
+  ----breakpoint: auto;
 }
 
+/* ======== common color and font ========== */
+
+
+/* ======== common style ========== */
 .container {
   margin: auto;
-  background-color: bisque;
+  max-width: 1180px;
+  /* background-color: bisque; */
 }
 
-.text-style {
-  font-size: 100px;
-  color: burlywood;
+
+* {
+  /* padding: 0;
+  margin: 0; */
+  box-sizing: border-box;
 }
+
+img {
+  vertical-align: middle;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+/* ======== common style ========== */
