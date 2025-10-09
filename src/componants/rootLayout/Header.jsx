@@ -16,8 +16,13 @@ const Header = () => {
           </div>
 
           {/* ======== second part / language ======== */}
-          <div className="flex gap-[5px] items-center"><p className="text-[14px] leading-[21px] text-text_color font-poppins font-normal">English</p>
-          <button className="text-white_color font-bold font-poppins cursor-pointer"><MdOutlineKeyboardArrowDown /></button></div>
+          {/* <div className="flex gap-[5px] items-center"><p className="text-[14px] leading-[21px] text-text_color font-poppins font-normal">English</p>
+          <button className="text-white_color font-bold font-poppins cursor-pointer"><MdOutlineKeyboardArrowDown /></button></div> */}
+
+          <select  name="" id="" className="text-[14px] leading-[21px] text-text_color font-poppins font-normal cursor-pointer">
+            <option className="bg-black_color cursor-pointer" value="english">English</option>
+            <option className="bg-black_color cursor-pointer" value="bengali">বাংলা</option>
+          </select>
 
         </div>
       </div>
