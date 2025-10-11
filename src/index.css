@@ -56,3 +56,33 @@ li {
   list-style: none;
 }
 /* ======== common style ========== */
+
+/* ======== custom style ========== */
+.cart-number{
+  position: relative;
+}
+.cart-number::after{
+  position: absolute;
+  content: '0';
+  top: -9px;
+  right: -7px;
+  width: 18px;
+  height:18px;
+  border-radius: 50%;
+  background-color: var(--color-secondary_color1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-family: var(--font-poppins);
+  font-weight: 400;
+  color: var(--color-text_color);
+}
+
+.normal-poppins-font{
+  font-family: var(--font-poppins);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+}
+/* ======== custom style ========== */
