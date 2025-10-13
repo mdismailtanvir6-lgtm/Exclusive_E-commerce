@@ -11,27 +11,31 @@ import { AiOutlineProduct } from "react-icons/ai";
 const Navbar = () => {
   // =========== useState & useRef for user profile =========
   const [profile, setProfile] = useState(false);
-  // const profileRef = useRef(null);
-  // const profileInfoRef = useRef(null);
+  const profileRef = useRef(null);
+  const profileInfoRef = useRef(null);
+
+  
 
   // =========== profile hiding function ==========
-  // useEffect(() => {
-  //   const handleClickOutside = (event) => {
-  //     if (profileRef.current && !profileRef.current.contains(event.target)) {
-  //       setProfile(false);
-  //     }
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (profileRef.current && !profileRef.current.contains(event.target)) {
+        setProfile(false);
+      }
 
-  //     if (profileInfoRef.current && profileInfoRef.current.contains(event.target)) {
-  //       setProfile(true);
-  //     }
+      if (profileInfoRef.current && profileInfoRef.current.contains(event.target)) {
+        setProfile(true);   
+      }
 
-  //   };
+    };
 
-  //   document.addEventListener("click", handleClickOutside);
-  //   return () => {
-  //     document.removeEventListener("click", handleClickOutside);
-  //   };
-  // }, []);
+    document.addEventListener("click", handleClickOutside);
+
+    // ========== closing useEffect =======
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   // ============= creating obj for nav item =============
   const navItems = [
@@ -102,7 +106,7 @@ const Navbar = () => {
               </span>
             </div>
 
-            {/* ===========  icon part =============== */}
+            {/* ===========  icon and user profile part =============== */}
             <div className="flex items-center gap-x-4 p-[6px]">
               <span className="text-[24px]">
                 <GiSelfLove />
@@ -112,21 +116,20 @@ const Navbar = () => {
               </span>
               <div
                 className="relative"
-
-                // ref={profileRef}
               >
                 <span
                   className="w-10 h-10 bg-secondary_color1 rounded-full flex justify-center items-center text-[24px] font-normal cursor-pointer text-white_color"
                   onClick={() => setProfile(!profile)}
+                   ref={profileRef}
                 >
                   <LuUser />
                 </span>
 
-                {/* ========== dropdown part ========== */}
+                {/* ========== user profile's dropdown part ========== */}
                 {profile && (
                   <div
-                    className={`absolute right-0 top-15.5 w-[224px] rotate-0 opacity-100 rounded-[4px] bg-[#9A939B]  flex flex-col overflow-hidden`}
-                    // ref={profileInfoRef}
+                    className={`absolute right-0 top-15.5 w-[224px] rotate-0 opacity-100 rounded-[4px] bg-[#000]/50  flex flex-col overflow-hidden z-3`}
+                    ref={profileInfoRef}
                   >
                     <div className="px-[15px] py-[10px] flex justify-start items-center gap-x-4 cursor-pointer hover:bg-hoverButton_color2 group transition-all">
                       <span className="text-[30px] text-text_color group-hover:text-black_color">

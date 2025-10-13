@@ -7,16 +7,16 @@ import {
   RouterContextProvider,
 } from "react-router";
 import "./App.css";
-import Header from "./componants/rootLayout/Header";
 import Navbar from "./componants/rootLayout/Navbar";
 import RootLayout from "./componants/rootLayout/RootLayout";
+import Home from "./pages/index/Home";
 
 // ======== creating router function ==========
 const route = createBrowserRouter(
   createRoutesFromElements(
     <Route>
       <Route path="/" element={<RootLayout />}>
-        <Route path="/header" element={<Header />}></Route>
+        <Route path="/" element={<Home />}></Route>
         <Route path="/navbar" element={<Navbar />}></Route>
       </Route>
     </Route>
